@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: {  }
+name: graphql_server
+label: 'GraphQL Server'
+schema: release_notes_schema
+schema_configuration:
+  composable:
+    extensions:
+      composable_extension: composable_extension
+      example_extension: example_extension
+      release_notes_extension: release_notes_extension
+persisted_queries_settings: {  }
+endpoint: /graphql
+debug_flag: 15
+caching: true
+batching: true

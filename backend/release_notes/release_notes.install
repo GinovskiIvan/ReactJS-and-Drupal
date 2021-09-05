@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function release_notes_install() {
+    // Create the taxonomy terms for release type if they do not exist.
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => 'Security Update', 'vid' => 'release_type']);
+    if (count($terms) < 1) {
+        \Drupal\taxonomy\Entity\Term::create([
+            'vid' => 'release_type',
+            'name' => t('Security Update'),
+            'description' => '',
+          ]);
+    }
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => 'New Features', 'vid' => 'release_type']);
+    if (count($terms) < 1) {
+        \Drupal\taxonomy\Entity\Term::create([
+            'vid' => 'release_type',
+            'name' => t('New Features'),
+            'description' => '',
+          ]);
+    }
+  }
+  

@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.release_notes
+    - paragraphs.paragraphs_type.images
+    - paragraphs.paragraphs_type.nested_paragraph
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.release_notes.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: release_notes
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      images: images
+      nested_paragraph: nested_paragraph
+      text: text
+      video: video
+    target_bundles_drag_drop:
+      from_library:
+        weight: 8
+        enabled: false
+      image_text:
+        weight: 9
+        enabled: false
+      images:
+        enabled: true
+        weight: 10
+      nested_paragraph:
+        enabled: true
+        weight: 11
+      text:
+        enabled: true
+        weight: 12
+      text_image:
+        weight: 13
+        enabled: false
+      user:
+        weight: 14
+        enabled: false
+      video:
+        enabled: true
+        weight: 16
+field_type: entity_reference_revisions

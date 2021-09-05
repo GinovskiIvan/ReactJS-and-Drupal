@@ -1,0 +1,23 @@
+schema {
+  query: Query
+}
+
+type ReleaseNotes {
+  id: Int!
+  title: String!
+  author: String
+  version: String
+}
+
+type Query {
+  release_notes(id: Int!): ReleaseNotes
+  release_notes(
+    offset: Int = 0
+    limit: Int = 10
+  ): ReleaseNotesConnection!
+}
+
+type ReleaseNotesConnection {
+  total: Int!
+  items: [ReleaseNotes!]
+}
