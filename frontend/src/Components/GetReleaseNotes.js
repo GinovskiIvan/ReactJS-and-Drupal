@@ -1,18 +1,25 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useQuery, gql} from '@apollo/client';
 import {LOAD_RELEASE_NOTES} from '../GraphQL/Queries'
 
 function GetReleaseNotes() {
     const {error, loading, data} = useQuery(LOAD_RELEASE_NOTES);
-    
+    const [releaseNotes, setReleaseNotes] = useState([]);
     useEffect(() => {
-        console.log(data);
-        console.log('we made it');
+        if (data) {
+            console.log(data.release_notes.items);
+            setReleaseNotes(data.release_notes.items[0])
+        }        
     }, [data]);
 
     return (
         <div>
-            
+            {
+            release_notes.map((val) => {
+                <h1>title</h1>
+            })
+            }
+
         </div>
     )
 }
