@@ -5,21 +5,18 @@ import {LOAD_RELEASE_NOTES} from '../GraphQL/Queries'
 function GetReleaseNotes() {
     const {error, loading, data} = useQuery(LOAD_RELEASE_NOTES);
     const [releaseNotes, setReleaseNotes] = useState([]);
+    
     useEffect(() => {
         if (data) {
-            console.log(data.release_notes.items);
-            setReleaseNotes(data.release_notes.items[0])
+            setReleaseNotes(data.release_notes.items);
         }        
     }, [data]);
 
     return (
         <div>
-            {
-            release_notes.map((val) => {
-                <h1>title</h1>
-            })
-            }
-
+            {releaseNotes.map((val) => {
+                return (<div> <h1> Title: {val.title}</h1> <h2> Version: {val.version}</h2> <h2>Release: {val.release_date}</h2></div>)
+            })}
         </div>
     )
 }
