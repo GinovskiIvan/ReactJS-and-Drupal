@@ -2,11 +2,18 @@ schema {
   query: Query
 }
 
+type ReleaseType {
+  id: Int
+  name: String
+}
+
 type ReleaseNotes {
   id: Int!
   title: String!
   author: String
   version: String
+  release_date: String
+  release_type: ReleaseType
 }
 
 type Query {
