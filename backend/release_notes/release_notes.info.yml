@@ -1,0 +1,8 @@
+name: Release Notes module
+description: Module that offers functionality to publish release notes and expose them for consumption through GraphQL
+package: Custom
+type: module
+core: 8.x
+dependencies:
+  - paragraphs:paragraphs
+  - graphql:graphql

@@ -1,0 +1,16 @@
+{
+    "name": "drupal/release_notes",
+    "description": "Release notes for versions",
+    "type": "drupal-custom-module",
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://github.com/GinovskiIvan/ReleaseNotes"
+      }
+    ],
+    "require": {
+      "drupal/paragraphs": "*",
+      "drupal/graphql": "*"
+    }
+  }
+  

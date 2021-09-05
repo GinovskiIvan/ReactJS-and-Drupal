@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: video
+label: Video
+icon_uuid: null
+description: 'Paragraph type that is used for showing a video field.'
+behavior_plugins: {  }
