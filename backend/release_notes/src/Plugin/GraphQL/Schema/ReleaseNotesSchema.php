@@ -74,21 +74,24 @@ class ReleaseNotesSchema extends SdlSchemaPluginBase {
         ->map('path', $builder->fromValue('field_release_date.value'))
       )
     );
+    
     $registry->addFieldResolver('ReleaseType', 'id',
       $builder->produce('entity_id')
         ->map('entity', $builder->fromParent())
     );
+
     $registry->addFieldResolver('ReleaseType', 'name',
       $builder->produce('entity_label')
         ->map('entity', $builder->fromParent())
     );
+
     $registry->addFieldResolver('ReleaseNotes', 'release_type',
-    $builder->produce('property_path')
-        ->map('type', $builder->fromValue('entity:node'))
-        ->map('value', $builder->fromParent())
-        ->map('path', $builder->fromValue('field_release_date.entity'))
-        
-    );    
+     $builder->produce('property_path')
+      ->map('type', $builder->fromValue('entity:taxonomy_term'))
+      ->map('value', $builder->fromParent())
+      ->map('path', $builder->fromValue('field_release_type.entity')),
+    );
+    
   }
 
   /**
