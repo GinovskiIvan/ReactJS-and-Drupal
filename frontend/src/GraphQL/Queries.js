@@ -9,6 +9,10 @@ export const LOAD_RELEASE_NOTES = gql `query {
         author
         version
         release_date
+        release_type {
+          id
+          name
+        }
       }
     }
   }`;
